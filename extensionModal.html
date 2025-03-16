@@ -2,35 +2,27 @@
 <html>
 <head>
 	<title>Dyslexia Text Helper</title>
-	<style>
-      body {
-          width: 300px;
-          padding: 10px;
-          font-family: Arial, sans-serif;
-      }
-      .button {
-          width: 100%;
-          padding: 8px;
-          margin: 5px 0;
-          background-color: #4285f4;
-          color: white;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-      }
-      .status {
-          margin-top: 10px;
-          padding: 5px;
-          background-color: #f0f0f0;
-          border-radius: 4px;
-      }
-	</style>
+	<link rel="stylesheet" href="extensionModal.css">
 </head>
 <body>
-	<h2>Dyslexia Text Helper</h2>
-	<button id="modify-page" class="button">Apply rewording of the current page?</button>
-	<div class="status" id="status">Status: Ready</div>
-	<script src="config.js"></script>
-	<script src="extensionModal.js"></script>
+<h2>Dyslexia Text Helper</h2>
+
+<div class="button-group">
+	<div class="action-group">
+		<button id="modify-selected-text" class="button">Modify Highlighted Text</button>
+		<button id="reset-selected-text" class="button secondary">Restore Highlighted</button>
+	</div>
+
+	<div class="action-group">
+		<button id="modify-page" class="button">Modify Entire Page</button>
+		<button id="reset-page-text" class="button secondary">Restore Page</button>
+	</div>
+	<button id="reset-all-modifications" class="button danger">Reset All Modifications</button>
+</div>
+
+<div class="status" id="status">Status: Ready</div>
+
+<script src="config.js"></script>
+<script src="extensionModal.js"></script>
 </body>
 </html>

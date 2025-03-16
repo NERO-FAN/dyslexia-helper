@@ -1,0 +1,122 @@
+/* extensionModal.css */
+:root {
+    --primary-color: #4e54c8;
+    --primary-light: #8086e9;
+    --primary-dark: #363b8c;
+    --secondary-color: #9c64a6;
+    --text-color: #333;
+    --background-color: #f8f9fa;
+    --border-color: #e1e4e8;
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    width: 320px;
+    padding: 20px;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+h2 {
+    color: var(--primary-dark);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 22px;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.action-group {
+    display: flex;
+    gap: 8px;
+}
+
+.button {
+    flex: 1;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    box-shadow: var(--box-shadow);
+}
+
+.button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.button.secondary {
+    background-color: var(--secondary-color);
+}
+
+.button.secondary:hover {
+    background-color: #8257a1;
+}
+
+.button.danger {
+    background-color: var(--error-color);
+}
+
+.button.danger:hover {
+    background-color: #c0392b;
+}
+
+.status {
+    margin-top: 16px;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    background-color: #f1f3f5;
+    text-align: center;
+    font-size: 14px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.status.success {
+    border-left-color: var(--success-color);
+    background-color: #eafaf1;
+}
+
+.status.error {
+    border-left-color: var(--error-color);
+    background-color: #fdedec;
+}
+
+/* For better accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .button {
+        transition: none;
+    }
+
+    .button:hover {
+        transform: none;
+    }
+}
+
+/* For dyslexic users, improve readability */
+.dyslexic-friendly {
+    font-family: 'OpenDyslexic', 'Comic Sans MS', var(--font-family);
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+}

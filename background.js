@@ -2,18 +2,16 @@ importScripts('config.js');
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.action === "modifyText") {
-        // Handle message
+        // with the incoming text, we call handleModifyText since we expect to return modified text
         handleModifyText(request, sender, sendResponse);
 
-        // Return true immediately to keep the port open
         return true;
     }
 });
 
 async function handleModifyText(request, sender, sendResponse) {
     try {
-        // Modify to match your config object structure
-        const apiKey = config.OPENAI_API_KEY // or config.OPENAI_API_KEY, whatever you defined
+        const apiKey = config.OPENAI_API_KEY;
 
         if (!apiKey) {
             console.error("No API key found in config");
@@ -28,7 +26,7 @@ async function handleModifyText(request, sender, sendResponse) {
                 "Authorization": `Bearer ${apiKey}`
             },
             body: JSON.stringify({
-                model: "gpt-4o", // Or whatever model you prefer
+                model: "gpt-4o",
                 messages: [
                     {
                         role: "system",
